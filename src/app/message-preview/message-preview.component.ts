@@ -17,4 +17,8 @@ export class MessagePreviewComponent implements OnInit {
     this.messageViewable = Math.random() >= 0.4;
   }
 
+  onView() {
+    alert('Viewing message!');
+  }
+
 }
