@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-message-preview',
@@ -7,17 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagePreviewComponent implements OnInit {
 
-  title: string;
+  @Input() title: string;
+  @Input() message: string;
   subtitle: string;
-  messageViewable: boolean;
+  @Input() messageViewable: boolean;
   titleColor: string;
   titleStyle: {};
 
-  constructor() { }
+  constructor() {
+    this.messageViewable = false;
+  }
 
   ngOnInit() {
-    this.title = 'Welcome!';
-    this.messageViewable = Math.random() >= 0.4;
     this.titleColor = 'dodgerblue';
     this.titleStyle = { color: 'peru' };
   }

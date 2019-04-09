@@ -1,1 +1,5 @@
-<app-message-preview *ngFor="let message of messageArray"></app-message-preview>
+<app-message-preview *ngFor="let message of messageArray"
+                     [title]="message.title"
+                     [message]="message.message"
+                     [messageViewable]="message.viewable"
+></app-message-preview>
