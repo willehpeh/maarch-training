@@ -2,4 +2,5 @@
                      [title]="message.title"
                      [message]="message.message"
                      [messageViewable]="message.viewable"
+                     (wasViewed)="onMessageViewed($event)"
 ></app-message-preview>

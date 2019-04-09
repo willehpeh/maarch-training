@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message-preview',
@@ -14,6 +14,8 @@ export class MessagePreviewComponent implements OnInit {
   titleColor: string;
   titleStyle: {};
 
+  @Output() wasViewed = new EventEmitter<string>();
+
   constructor() {
     this.messageViewable = false;
   }
@@ -24,7 +26,7 @@ export class MessagePreviewComponent implements OnInit {
   }
 
   onView() {
-    alert('Viewing message!');
+    this.wasViewed.emit(this.title);
   }
 
 }

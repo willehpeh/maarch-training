@@ -27,4 +27,8 @@ export class MessageListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMessageViewed(messageTitle: string) {
+    alert(`Message ${messageTitle} was viewed!`);
+  }
+
 }
