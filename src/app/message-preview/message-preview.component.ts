@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MessagePreviewComponent implements OnInit {
 
   title: string;
+  subtitle: string;
   messageViewable: boolean;
 
   constructor() { }
@@ -15,6 +16,7 @@ export class MessagePreviewComponent implements OnInit {
   ngOnInit() {
     this.title = 'Welcome!';
     this.messageViewable = Math.random() >= 0.4;
+    this.subtitle = 'Subtitle';
   }
 
   onView() {
