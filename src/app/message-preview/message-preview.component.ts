@@ -10,12 +10,16 @@ export class MessagePreviewComponent implements OnInit {
   title: string;
   subtitle: string;
   messageViewable: boolean;
+  titleColor: string;
+  titleStyle: {};
 
   constructor() { }
 
   ngOnInit() {
     this.title = 'Welcome!';
     this.messageViewable = Math.random() >= 0.4;
+    this.titleColor = 'dodgerblue';
+    this.titleStyle = { color: 'peru' };
   }
 
   onView() {
