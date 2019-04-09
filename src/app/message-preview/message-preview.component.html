@@ -7,8 +7,9 @@
             [disabled]="!messageViewable"
             (click)="onView()"
     >View message</button>
-    <mat-form-field>
-      <input type="text" placeholder="Set your own subtitle" [(ngModel)]="subtitle" matInput>
+    <mat-form-field *ngIf="messageViewable">
+      <input type="text" placeholder="Set your own subtitle" [(ngModel)]="subtitle" matInput
+      >
     </mat-form-field>
   </mat-card-actions>
 </mat-card>
