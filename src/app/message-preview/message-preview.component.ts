@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-message-preview',
@@ -16,6 +16,8 @@ export class MessagePreviewComponent implements OnInit {
 
   @Output() wasViewed = new EventEmitter<string>();
 
+  @ViewChild('cardTitle') cardTitle: ElementRef;
+
   constructor() {
     this.messageViewable = false;
   }
@@ -26,7 +28,7 @@ export class MessagePreviewComponent implements OnInit {
   }
 
   onView() {
-    this.wasViewed.emit(this.title);
+    this.wasViewed.emit(this.cardTitle.nativeElement.textContent);
   }
 
 }
