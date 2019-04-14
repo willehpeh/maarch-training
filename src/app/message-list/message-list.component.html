@@ -1,7 +1,5 @@
 <app-message-preview *ngFor="let message of messageArray"
-                     [title]="message.title"
-                     [message]="message.message"
-                     [messageViewable]="message.viewable"
+                     [message]="message"
                      (wasViewed)="onMessageViewed($event)"
 >
   <div class="custom">

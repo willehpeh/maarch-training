@@ -18,10 +18,8 @@ import {
 })
 export class MessagePreviewComponent implements OnInit, AfterContentInit, AfterViewInit {
 
-  @Input() title: string;
-  @Input() message: string;
+  @Input() message: { title: string, message: string, viewable: boolean, date: Date };
   subtitle: string;
-  @Input() messageViewable: boolean;
   titleColor: string;
   titleStyle: {};
 
@@ -32,7 +30,6 @@ export class MessagePreviewComponent implements OnInit, AfterContentInit, AfterV
   @ContentChild('disabled') disabled: ElementRef;
 
   constructor() {
-    this.messageViewable = false;
   }
 
   ngOnInit() {
@@ -41,7 +38,7 @@ export class MessagePreviewComponent implements OnInit, AfterContentInit, AfterV
   }
 
   ngAfterContentInit() {
-    if (this.messageViewable) {
+    if (this.message.viewable) {
       this.disabled.nativeElement.textContent = '';
     }
   }

@@ -1,16 +1,18 @@
 <mat-card>
-  <mat-card-title [ngStyle]="titleStyle" #cardTitle>{{ title }}</mat-card-title>
-  <mat-card-subtitle appHighlight>{{ subtitle }}</mat-card-subtitle>
-  <mat-card-content [ngClass]="{ 'inactive': !messageViewable }">
-    {{ message }}
+  <mat-card-title [ngStyle]="titleStyle" #cardTitle>
+    {{ message.title }}
+  </mat-card-title>
+  <mat-card-subtitle>{{ subtitle }} - {{ message.date | date:'MMMM dd, yyyy' }}</mat-card-subtitle>
+  <mat-card-content [ngClass]="{ 'inactive': !message.viewable }">
+    {{ message.message }}
     <ng-content></ng-content>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary"
-            [disabled]="!messageViewable"
+            [disabled]="!message.viewable"
             (click)="onView()"
     >View message</button>
-    <mat-form-field *ngIf="messageViewable">
+    <mat-form-field *ngIf="message.viewable">
       <input type="text" placeholder="Set your own subtitle" [(ngModel)]="subtitle" matInput
       >
     </mat-form-field>

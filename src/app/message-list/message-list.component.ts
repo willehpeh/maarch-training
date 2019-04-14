@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageListComponent implements OnInit {
 
-  messageArray: { title: string, message: string, viewable: boolean }[] = [
+  messageArray: { title: string, message: string, viewable: boolean, date: Date }[] = [
     { title: 'First title',
       message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-      viewable: true
+      viewable: true,
+      date: new Date()
     },
     { title: 'Second title',
       message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-      viewable: false
+      viewable: false,
+      date: new Date()
     },
     { title: 'Third title',
       message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-      viewable: true
+      viewable: true,
+      date: new Date()
     }
   ];
 
