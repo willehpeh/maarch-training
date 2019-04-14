@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MessageListComponent } from './message-list/message-list.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { HighlightDirective } from './highlight.directive';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HighlightDirective } from './highlight.directive';
     MessagePreviewComponent,
     MessageListComponent,
     LifecycleHooksComponent,
-    HighlightDirective
+    HighlightDirective,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

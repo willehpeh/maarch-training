@@ -4,7 +4,7 @@
   </mat-card-title>
   <mat-card-subtitle>{{ subtitle }} - {{ message.date | date:'MMMM dd, yyyy' }}</mat-card-subtitle>
   <mat-card-content [ngClass]="{ 'inactive': !message.viewable }">
-    {{ message.message }}
+    {{ message.message | shorten:30 }}
     <ng-content></ng-content>
   </mat-card-content>
   <mat-card-actions>
