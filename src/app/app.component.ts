@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  insertedText: string;
+  // insertedText: string;
 
   ngOnInit() {
-    this.insertedText = 'Original inserted text!';
-    setTimeout(() => {
-      this.insertedText = 'Modified inserted text!';
-    }, 4000);
+    // this.insertedText = 'Original inserted text!';
+    // setTimeout(() => {
+    //   this.insertedText = 'Modified inserted text!';
+    // }, 4000);
   }
 }
