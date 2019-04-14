@@ -7,12 +7,14 @@ import { MessagePreviewComponent } from './message-preview/message-preview.compo
 import { MatButtonModule, MatCardModule, MatInputModule, MatToolbarModule, MatFormFieldModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MessageListComponent } from './message-list/message-list.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagePreviewComponent,
-    MessageListComponent
+    MessageListComponent,
+    LifecycleHooksComponent
   ],
   imports: [
     BrowserModule,
