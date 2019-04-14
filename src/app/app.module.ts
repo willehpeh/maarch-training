@@ -8,13 +8,15 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatToolbarModule, MatFo
 import { FormsModule } from '@angular/forms';
 import { MessageListComponent } from './message-list/message-list.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagePreviewComponent,
     MessageListComponent,
-    LifecycleHooksComponent
+    LifecycleHooksComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
