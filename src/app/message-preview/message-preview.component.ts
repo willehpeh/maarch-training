@@ -1,11 +1,22 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ContentChild,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 
 @Component({
   selector: 'app-message-preview',
   templateUrl: './message-preview.component.html',
   styleUrls: ['./message-preview.component.scss']
 })
-export class MessagePreviewComponent implements OnInit {
+export class MessagePreviewComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   @Input() title: string;
   @Input() message: string;
@@ -18,6 +29,8 @@ export class MessagePreviewComponent implements OnInit {
 
   @ViewChild('cardTitle') cardTitle: ElementRef;
 
+  @ContentChild('disabled') disabled: ElementRef;
+
   constructor() {
     this.messageViewable = false;
   }
@@ -25,6 +38,18 @@ export class MessagePreviewComponent implements OnInit {
   ngOnInit() {
     this.titleColor = 'dodgerblue';
     this.titleStyle = { color: 'peru' };
+  }
+
+  ngAfterContentInit() {
+    if (this.messageViewable) {
+      this.disabled.nativeElement.textContent = '';
+    }
+  }
+
+  ngAfterViewInit() {
+    if (this.cardTitle.nativeElement.textContent === 'First title') {
+      this.cardTitle.nativeElement.textContent = 'Modified first title!';
+    }
   }
 
   onView() {

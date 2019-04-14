@@ -1,7 +1,10 @@
 <mat-card>
   <mat-card-title [ngStyle]="titleStyle" #cardTitle>{{ title }}</mat-card-title>
   <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
-  <mat-card-content [ngClass]="{ 'inactive': !messageViewable }">{{ message }}</mat-card-content>
+  <mat-card-content [ngClass]="{ 'inactive': !messageViewable }">
+    {{ message }}
+    <ng-content></ng-content>
+  </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary"
             [disabled]="!messageViewable"

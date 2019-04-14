@@ -3,4 +3,8 @@
                      [message]="message.message"
                      [messageViewable]="message.viewable"
                      (wasViewed)="onMessageViewed($event)"
-></app-message-preview>
+>
+  <div class="custom">
+    <p #disabled>This message has been disabled.</p>
+  </div>
+</app-message-preview>
